@@ -537,19 +537,19 @@ export interface SignalUserAutonomyConfig {
   updated_at?: string;
 }
 
-export interface SharedLinkParams {
+export interface NewTaskSharedParams {
   repo?: string;
   mode?: string;
   model?: string;
 }
 
 export type NewTaskLinkPayload =
-  | ({ action: "new"; prompt?: string } & SharedLinkParams)
-  | ({ action: "plan"; plan: string } & SharedLinkParams)
+  | ({ action: "new"; prompt?: string } & NewTaskSharedParams)
+  | ({ action: "plan"; plan: string } & NewTaskSharedParams)
   | ({
       action: "issue";
       url: string;
       owner: string;
       issueRepo: string;
       issueNumber: number;
-    } & SharedLinkParams);
+    } & NewTaskSharedParams);
